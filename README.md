@@ -78,13 +78,67 @@ CSV file exactly as received, with no transformations or cleaning applied.
 | DECIMALS | integer | Decimal places metadata |
 
 ---
+Silver Layer 
+The silver layer reads from the bronze Delta table and applies all
+cleaning and transformation logic to produce a structured, analysis
+ready dataset.
 
+### What Was Done
+
+**1. Read from Bronze**
+- Read directly from the bronze Delta table
+- Never touched the original CSV again
+
+**2. Column Selection**
+- Selected only the 4 relevant columns from the original 16:
+  - REF_DATE, GEO, Rental_unit_type, VALUE
+- Dropped all StatCan metadata columns that added no analytical value
+
+**3. NULL Removal**
+- Dropped all rows where VALUE (asking rent) was NULL
+- These represented city and unit type combinations where
+  StatCan had no data for that period
+- Row count reduced from 8,188 to a smaller clean dataset
+
+**4. GEO Column Cleaning**
+- Stripped the Census Metropolitan Area descriptor from city names
+  - e.g. "St. John's, Census metropolitan area (CMA)" → "St. John's"
+- Used split() on the comma and took only the first part
+- Applied trim() to remove leftover whitespace
+- Renamed column from GEO to City
+
+**5. Rental Unit Type Splitting**
+- Split the Rental_unit_type column into two separate columns
+  on the " - " delimiter:
+  - Unit_type → e.g. Apartment, House, Room
+  - Bedrooms  → e.g. 1 bedroom, 2 bedrooms, N/A
+- Handled the "Room" exception using when/otherwise:
+  - Room has no bedroom count so Bedrooms was set to "N/A"
+- Dropped the original Rental_unit_type column
+
+**6. Column Renaming and Casting**
+- Renamed REF_DATE → Reference_Date
+- Renamed VALUE → Asking_rent
+- Cast Asking_rent from integer to float to support
+  decimal precision in gold layer averages
+
+### Final Silver Schema
+| Column | Data Type | Description |
+|---|---|---|
+| Reference_Date | date | Reference period |
+| City | string | Cleaned city name |
+| Unit_type | string | Type of rental unit |
+| Bedrooms | string | Number of bedrooms |
+| Asking_rent | float | Average asking rent in dollars |
+
+### Silver Delta Table
+`projects.rent_project.silver_rent_clea
 ## Current Status
 - [x] GitHub repository created
 - [x] Databricks Git folder connected
 - [x] Raw CSV uploaded to Databricks Volume
 - [x] Bronze layer complete — 8,188 rows ingested
-- [ ] Silver layer in progress
+- [x] Silver layer in progress
 - [ ] Gold layer pending
 - [ ] ML prediction model pending
 - [ ] Genie setup pending
