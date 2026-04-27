@@ -78,7 +78,7 @@ CSV file exactly as received, with no transformations or cleaning applied.
 | DECIMALS | integer | Decimal places metadata |
 
 ---
-Silver Layer 
+## Silver Layer — Complete ✅
 The silver layer reads from the bronze Delta table and applies all
 cleaning and transformation logic to produce a structured, analysis
 ready dataset.
