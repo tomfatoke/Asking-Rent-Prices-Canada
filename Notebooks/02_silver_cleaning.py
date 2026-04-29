@@ -18,7 +18,8 @@ silver_df = (silver_df
     .withColumn("Unit_type", 
                 split(col("Rental_unit_type"), " - ")[0])  
     .withColumn("Bedrooms", 
-                when(col("Rental_unit_type") == "Room", "N/A") 
+                when(col("Rental_unit_type") == "Room", "Room") 
+                .when(col("Rental_unit_type").contains("No bedroom"), "Studio") 
                 .otherwise(split(col("Rental_unit_type"), " - ")[1])) 
     .drop("Rental_unit_type")  
 )
