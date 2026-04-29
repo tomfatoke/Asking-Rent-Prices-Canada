@@ -212,34 +212,39 @@ generated using Databricks Genie natural language querying.
 ---
 
 ### National Average Rent (2025)
-![National Average Rent](images/National%20Average%20Rent%20(2025).png)
+<img src="images/National%20Average%20Rent%20(2025).png" width="700"/>
+
 The national average asking rent in Canada for 2025 is $1,766.
 
 ---
 
 ### Most Expensive City
-![Most Expensive City](images/Most%20Expensive%20City_%20Vancouver.png)
+<img src="images/Most%20Expensive%20City_%20Vancouver.png" width="700"/>
+
 Vancouver has the highest overall average rent among all
 Canadian cities in the dataset.
 
 ---
 
 ### Most Affordable City
-![Most Affordable City](images/Most%20Affordable%20City_%20Saguenay.png)
+<img src="images/Most%20Affordable%20City_%20Saguenay.png" width="700"/>
+
 Saguenay is the most affordable city in Canada based on
 average asking rent.
 
 ---
 
 ### Highest Rent Increase Since 2019
-![Highest Rent Increase](images/Highest%20Rent%20Increase_%20Trois-Rivières.png)
+<img src="images/Highest%20Rent%20Increase_%20Trois-Rivières.png" width="700"/>
+
 Trois-Rivières has experienced the largest rent increase
 since 2019 among all cities in the dataset.
 
 ---
 
 ### Cities by Rent Increase Since 2019
-![Cities by Rent Increase](images/Cities%20by%20Rent%20Increase%20Since%202019.png)
+<img src="images/Cities%20by%20Rent%20Increase%20Since%202019.png" width="700"/>
+
 Trois-Rivières leads all Canadian cities with the most
 dramatic rent increase since 2019, with Quebec cities
 and Atlantic Canadian markets dominating the top 10.
@@ -247,7 +252,8 @@ and Atlantic Canadian markets dominating the top 10.
 ---
 
 ### Rent Price Trends — Top 10 Cities (2019–2025)
-![Rent Price Trends](images/Rent%20Price%20Trends_%20Top%2010%20Cities%20(2019-2025).png)
+<img src="images/Rent%20Price%20Trends_%20Top%2010%20Cities%20(2019-2025).png" width="700"/>
+
 Vancouver consistently shows the highest rent levels
 across the entire 2019 to 2025 trend line compared
 to all other major Canadian cities.
@@ -255,28 +261,32 @@ to all other major Canadian cities.
 ---
 
 ### Top 10 Cities by Average Rent (2025)
-![Top 10 Cities by Average Rent](images/Top%2010%20Cities%20by%20Average%20Rent%20(2025).png)
+<img src="images/Top%2010%20Cities%20by%20Average%20Rent%20(2025).png" width="700"/>
+
 Vancouver has the highest average rent among the top
 10 most expensive Canadian cities in 2025.
 
 ---
 
 ### Average Rent by Number of Bedrooms (2025)
-![Average Rent by Bedrooms](images/Average%20Rent%20by%20Number%20of%20Bedrooms%20(2025).png)
+<img src="images/Average%20Rent%20by%20Number%20of%20Bedrooms%20(2025).png" width="700"/>
+
 Units with 3 or more bedrooms have the highest average
 asking rent compared to all other bedroom categories.
 
 ---
 
 ### Average Rent by Unit Type (2025)
-![Average Rent by Unit Type](images/Average%20Rent%20by%20Unit%20Type%20(2025).png)
+<img src="images/Average%20Rent%20by%20Unit%20Type%20(2025).png" width="700"/>
+
 Houses have the highest average asking rent compared
 to apartments and rooms across all Canadian cities.
 
 ---
 
 ### Average Rent Heatmap — City vs Year
-![Average Rent Heatmap](images/Average%20Rent%20Heatmap_%20City%20vs%20Year.png)
+<img src="images/Average%20Rent%20Heatmap_%20City%20vs%20Year.png" width="700"/>
+
 Vancouver consistently remains the most expensive city
 across all years from 2019 to 2025 in the heatmap.
 
